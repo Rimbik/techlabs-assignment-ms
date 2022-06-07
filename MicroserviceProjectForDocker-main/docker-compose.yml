@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  blogpost-api:
+    image: ${DOCKER_REGISTRY-}img-blogpostapi
+    build:
+      context: .
+      dockerfile: blogpost-api/Dockerfile
+
+  eventbus-api:
+    image: ${DOCKER_REGISTRY-}img-eventbusapi
+    build:
+      context: .
+      dockerfile: eventbus-api/Dockerfile

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blogpost-api", "blogpost-api\blogpost-api.csproj", "{2EBDD35B-090D-47E7-BE1C-002601800FC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blogcomment-api", "blogcomment-api\blogcomment-api.csproj", "{29D9C896-0FA6-4AEF-B1B7-BD1B213A0ABC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eventbus-api", "eventbus-api\eventbus-api.csproj", "{3F2644B1-DF87-4C1B-8E34-CC2475D7EE61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogAPIClient", "BlogAPIClient\BlogAPIClient.csproj", "{8090A03C-B56C-4972-8FFB-A34FD1977FDB}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D36BEDC8-A250-4A55-BF99-B5B2C442E8E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AB46DF0-B2A1-4D5D-9984-264C8FDB9050}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EBDD35B-090D-47E7-BE1C-002601800FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBDD35B-090D-47E7-BE1C-002601800FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EBDD35B-090D-47E7-BE1C-002601800FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EBDD35B-090D-47E7-BE1C-002601800FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D9C896-0FA6-4AEF-B1B7-BD1B213A0ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D9C896-0FA6-4AEF-B1B7-BD1B213A0ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D9C896-0FA6-4AEF-B1B7-BD1B213A0ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D9C896-0FA6-4AEF-B1B7-BD1B213A0ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F2644B1-DF87-4C1B-8E34-CC2475D7EE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F2644B1-DF87-4C1B-8E34-CC2475D7EE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F2644B1-DF87-4C1B-8E34-CC2475D7EE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F2644B1-DF87-4C1B-8E34-CC2475D7EE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8090A03C-B56C-4972-8FFB-A34FD1977FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8090A03C-B56C-4972-8FFB-A34FD1977FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8090A03C-B56C-4972-8FFB-A34FD1977FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8090A03C-B56C-4972-8FFB-A34FD1977FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36BEDC8-A250-4A55-BF99-B5B2C442E8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36BEDC8-A250-4A55-BF99-B5B2C442E8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36BEDC8-A250-4A55-BF99-B5B2C442E8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36BEDC8-A250-4A55-BF99-B5B2C442E8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6265BE28-973F-401A-83D9-CC1DED70236E}
+	EndGlobalSection
+EndGlobal
