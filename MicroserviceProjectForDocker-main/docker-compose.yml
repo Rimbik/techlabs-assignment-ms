@@ -2,25 +2,25 @@ version: '3.4'
 
 services:
   blogpost-api:
-    image: ${DOCKER_REGISTRY-}img-blogpostapi
+    image: ${DOCKER_REGISTRY-}img-blogpostapi:v1.0
     build:
       context: .
       dockerfile: blogpost-api/Dockerfile
   
   blogcomment-api:
-    image: ${DOCKER_REGISTRY-}img-blogcommentapi
+    image: ${DOCKER_REGISTRY-}img-blogcommentapi:v1.0
     build:
       context: .
       dockerfile: blogpost-api/Dockerfile
   
   queryms-api:
-    image: ${DOCKER_REGISTRY-}img-querymapi
+    image: ${DOCKER_REGISTRY-}img-querymsapi:v1.0
     build:
       context: .
-      dockerfile: blogpost-api/Dockerfile
+      dockerfile: queryms-api/Dockerfile
 
   eventbus-api:
-    image: ${DOCKER_REGISTRY-}img-eventbusapi
+    image: ${DOCKER_REGISTRY-}img-eventbusapi:v1.0
     build:
       context: .
       dockerfile: eventbus-api/Dockerfile

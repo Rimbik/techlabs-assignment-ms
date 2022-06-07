@@ -1,0 +1,38 @@
+https://hub.docker.com/repository/
+Username: Rimbik
+
+------------ final
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+docker ps <<enter>>
+docker images <<enter>>
+
+
+REPOSITORY              TAG 	     IMAGE ID       CREATED          SIZE
+==========================================================================
+img-querymsapi          v1.0         89e419eff059   12 seconds ago   212MB
+img-eventbusapi         v1.0         1252ce059d67   5 hours ago      212MB
+img-blogcommentapi      v1.0         8cd449e915f1   5 hours ago      212MB
+img-blogpostapi         v1.0         8cd449e915f1   5 hours ago      212MB
+---------------------------------------------------------------------------
+(get the images name and do the command below)
+
+docker login --username rimbik
+password: P@ss??
+
+---- Push images to docker-hub
+
+docker tag img-eventbusapi:v1.0 rimbik/techlabms:v1.0.eb
+docker push rimbik/techlabms:v1.0.eb
+
+docker tag img-blogpostapi:v1.0 rimbik/techlabms:v1.0.bp
+docker push rimbik/techlabms:v1.0.bp
+
+docker tag img-blogcommentapi:v1.0 rimbik/techlabms:v1.0.bc
+docker push rimbik/techlabms:v1.0.bc
+
+docker tag img-querymsapi:v1.0 rimbik/techlabms:v1.0.qs
+docker push rimbik/techlabms:v1.0.qs
+----------------------------------------------------------------
+
+NOW: we can set these to k8s configs
+
