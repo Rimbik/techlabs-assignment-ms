@@ -8,6 +8,12 @@ namespace eventbus_api.Repository
         public static Dictionary<string, string> eventComments = new Dictionary<string, string>();
         public static bool SaveEvent(string key, string post)
         {
+            if (eventSource != null)
+            {
+                if (eventSource.Where(k => k.BlogID == key).Count() > 0)
+                    throw new Exception("Duplicte Blog Post...");
+            }
+
             eventSource.Add(new Blog() { BlogID = key, BlogMessage = post });
 
             return true;
@@ -17,12 +23,13 @@ namespace eventbus_api.Repository
         {
             var getBloag = eventSource.FirstOrDefault(e => e.BlogID == key);
                         
-            if (getBloag == null)
-            {
-                eventSource.Add(new Blog() { BlogID = key });
-            }
+            //if (getBloag == null)
+            //{
+            //    eventSource.Add(new Blog() { BlogID = key });
+            //}
             
-            getBloag = eventSource.FirstOrDefault(e => e.BlogID == key);
+            //getBloag = eventSource.FirstOrDefault(e => e.BlogID == key);
+            
             if (getBloag != null)
             {
                 if (getBloag.Comments == null)

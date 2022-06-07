@@ -13,11 +13,11 @@ namespace blogpost_api.Controllers
         public string Post([FromBody] Blog value)
         {
             //save post to some repo
-            string evbAPIUrl = "https://localhost:4005/api/PublishEvent";
+            string evbAPIUrl = "http://localhost:3005/api/PublishEvent";
             string reqObj = JsonConvert.SerializeObject(value);
-            BlogAPIClient.BlogAPICient.PostApi(evbAPIUrl, reqObj);
+           var respnse = BlogAPIClient.BlogAPICient.PostApi(evbAPIUrl, reqObj);
             
-            return "Success!";
+            return respnse;
         }
     }
 }

@@ -6,6 +6,18 @@ services:
     build:
       context: .
       dockerfile: blogpost-api/Dockerfile
+  
+  blogcomment-api:
+    image: ${DOCKER_REGISTRY-}img-blogcommentapi
+    build:
+      context: .
+      dockerfile: blogpost-api/Dockerfile
+  
+  queryms-api:
+    image: ${DOCKER_REGISTRY-}img-querymapi
+    build:
+      context: .
+      dockerfile: blogpost-api/Dockerfile
 
   eventbus-api:
     image: ${DOCKER_REGISTRY-}img-eventbusapi

@@ -49,5 +49,19 @@ namespace BlogAPIClient
             var responseText = response.Content.ReadAsStringAsync().Result;
             return responseText;
         }
+
+        public static string PutApi(string ApiUrl, string postData = "")
+        {
+            var data = new StringContent(postData, Encoding.UTF8, "application/json");
+
+            var url = ApiUrl;
+            using var client = new HttpClient();
+
+            var response = client.PutAsync(url, data).Result;
+
+            var responseText = response.Content.ReadAsStringAsync().Result;
+            return responseText;
+        }
+
     }
 }
