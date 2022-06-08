@@ -1,0 +1,73 @@
+RUN APP from Docker
+=====================
+
+App should be build sucessfully after cloning from github then do the next... 
+[Github has no executables so rebuild is required locally] use vs or vs code for that....
+
+
+EASY WAY:
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+then browse:
+   eventbusapi: http://localhost:4005/swagger/index.html
+blogcommentapi: http://localhost:4002/swagger/index.html
+    querymsapi: http://localhost:4003/swagger/index.html
+   blogpostapi: http://localhost:4001/swagger/index.html
+	
+
+Note: 
+
+Local run	Docker Run		K8 run
+---------	----------		--------
+ports 300*	ports 400*	       ports 500* -> 3000*
+-=----------------------------------------------------------------------------
+
+START A HARD WAY ......
+
+To setup everything form scratch:
+1: Open Docker Desktop in Admin Mode
+2: Open DOS CLI in Admin mode
+3: run the below commands
+
+1: dockr ps
+	[If you see any lab realted / ms related PS, need to stop and kill them]
+
+Sample:
+C:\Windows\system32>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+To create container, simply run the command below:
+1: Open Docker Desktop in Admin Mode
+2: Open DOS CLI in Admin mode
+3: Fire: command
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+Now you should have all images and containers up and running as:
+
+docker ps
+E:\MicroserLAB\LabDay2\dotnetConverted\MicroserviceProjectForDocker-main>docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+3d72379defba   img-blogcommentapi:v1.0   "dotnet blogcomment-…"   52 seconds ago   Up 47 seconds   0.0.0.0:4002->80/tcp   microserviceprojectfordocker-main_blogcomment-api_1
+6b174866d461   img-querymsapi:v1.0       "dotnet queryms-api.…"   15 hours ago     Up 47 seconds   0.0.0.0:4003->80/tcp   microserviceprojectfordocker-main_queryms-api_1
+909090f64324   img-eventbusapi:v1.0      "dotnet eventbus-api…"   15 hours ago     Up 48 seconds   0.0.0.0:4005->80/tcp   microserviceprojectfordocker-main_eventbus-api_1
+81cb337e82a3   img-blogpostapi:v1.0      "dotnet blogpost-api…"   16 hours ago     Up 47 seconds   0.0.0.0:4001->80/tcp   microserviceprojectfordocker-main_blogpost-api_1
+
+docker images:
+REPOSITORY                                                TAG                                                                          IMAGE ID       CREATED         SIZE
+img-blogcommentapi                                        v1.0                                                                         afe2ab74a58b   3 minutes ago   212MB
+img-querymsapi                                            v1.0                                                                         89e419eff059   15 hours ago    212MB
+img-eventbusapi                                           v1.0                                                                         1252ce059d67   19 hours ago    212MB
+img-blogpostapi                                           v1.0                                                                         8cd449e915f1   19 hours ago    212MB
+
+Note: I have creates all with tag v1.0 for reference
+
+now acces site using docker ps output:
+
+   eventbusapi: http://localhost:4005/swagger/index.html
+blogcommentapi: http://localhost:4002/swagger/index.html
+    querymsapi: http://localhost:4003/swagger/index.html
+   blogpostapi: http://localhost:4001/swagger/index.html
+
+Bingo ........
+
+=================================================================
+

@@ -1,0 +1,41 @@
+RUNFROM K8s Cluster
+======================
+
+EASY WAY:
+run:
+
+Public DocketHub regsitry:
+https://hub.docker.com/repository/docker/rimbik/techlabs-pub
+
+kubectl apply -f blogcomment-api.config.yml
+kubectl apply -f blogcomment-api.yml
+
+kubectl apply -f bloagpost-api.config.yml
+kubectl apply -f bloagpost-api.yml
+
+kubectl apply -f eventbus-api.config.yml
+kubectl apply -f eventbus-api.yml
+
+kubectl apply -f queryms-api.config.yml
+kubectl apply -f queryms-api.yml
+
+kubectl get svc
+E:\MicroserLAB\LabDay2\dotnetConverted\MicroserviceProjectForDocker-main\Infra\k8sPublic>kubectl get svc
+NAME                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+blogcomment-api-service   NodePort    10.96.188.49     <none>        5002:30002/TCP   105m
+blogpost-api-service      NodePort    10.108.255.140   <none>        5005:30001/TCP   117m
+eventbus-api-service      NodePort    10.107.69.155    <none>        5005:30005/TCP   5h7m
+kubernetes                ClusterIP   10.96.0.1        <none>        443/TCP          17h
+queryms-api-service       NodePort    10.103.184.57    <none>        5003:30003/TCP   105m
+
+
+Test an API:
+start minikube service eventbus-api-service --url
+start minikube service blogpost-api-service --url
+start minikube service queryms-api-service  --url
+start minikube service blogcomment-api-service --url
+
+They are confgured for 30001/2/3/5
+------------------------------------------------------------------------------------------
+
+

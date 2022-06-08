@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: eventbus-api.config
-data:
-  eventbus-api-url: eventbus-api.service

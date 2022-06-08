@@ -1,0 +1,116 @@
+
+RUN APPS LOCALLY 
+===================
+iNFRA: VS 2022 Community, .Net core 6, c#
+-----------------------------------------
+
+The .net solution is configured to launch all MicroServide App parallay.
+They will be launched togther and you can access anyone using opened swagger url in browser
+
+How to Run on Swagger:
+1: Build and start (ctrl+f5) the .net solution or run from vs code
+2: All 4 borwsers will open
+	
+	SLNO	API Name				Port	url
+	==========================================================================
+	1		eventbus-api			3005	http://localhost:3005/swagger/index.html
+	2		blogpost-api			3005	http://localhost:3001/swagger/index.html
+	3		blogcomment-api			3005	http://localhost:3002/swagger/index.html
+	4		queryms-api				3005	http://localhost:3003/swagger/index.html
+
+One shuld be able to access all the above url after startig the app using Ctrl+f5 in vs
+
+3: 
+	A) 
+	Get ALL BLOGs
+	---------------
+	Go to url query-ms api: http://localhost:3003/swagger/index.html
+	try the Get() API to see if any Blog is available- initially its blank
+	
+	Get URL:
+	http://localhost:3003/api/QueryService
+	
+	B) 
+	CREATE A BLOG
+	--------------
+	Go to Blog Port API with : http://localhost:3001/swagger/index.html
+	Try the Post Action: and set the json as below
+	
+	JSON:
+	{
+		"blogID": "MyBlog-1",
+		"blogMessage": "This is my Blog Header - My Blog1",
+		"comments": [
+			"string"
+		]
+	}
+
+	you shoudl get succss, vaidate it by step:A above
+
+	C) 
+	Post Comment on existing BLOG
+	------------------------------
+	Go to url of Blogcomment-api: http://localhost:3002/swagger/index.html
+	Select the default PUT action in swagger
+
+	with JSON: 
+	{
+		"blogID": "MyBlog-1",
+		"blogMessage": "string",
+		"comments": [
+			"Comment for MyBlog-1"
+		]
+	}
+
+	** note: blogID have to match that you created earlier as Pimary key
+
+	Now you caN GO to queryms-api: as step (A) and fire Get() to see latest blog status,
+	you should see all udates in that
+
+
+	Some Issue: ****
+	Dnt use POST Action in Blogcomment-api to place any comment in exiswting blog,
+	use PUT instead.
+
+	entbus-api: is used only to accept / return responses, Do not use it APIs unnecesarily as
+	
+	CQRS style: (under eventbus-api) : It uses inmemory data storage and rerunninf the app will loose data
+	: queryms-api is there for any query
+	: blogpos-api and blogcomment-api is there for Commands
+
+
+	***
+	My next action will be ataching postman scripts for ease, instead of swagger url
+
+	
+	Few Notes:
+	: Make sure docker does not strat automattically on application run/start
+	  this .net solution also embedds docker based approach , so to run locally I have provission for all
+	  like:
+			run Locally:   with port 3000*
+			run in Docker: with port 4000*
+			run in k8s:    with port 5000*	---> Technically 30000*
+
+	 So that we can test all at the same time
+	 But at this moment focus on 3000 ports that are local machine
+
+	 For that: go to VS > Tools > Settings > Container Menu
+	 Make sure all docker related stuffs are Never/Disabled
+	 When it is time for docker , we will create image and container from outside command
+
+	  Enough Lecture, lets run......
+
+	Enjoy... and for any issue mail me: rimbik@gmail.com
+
+	==========================================================================
+	Date: 8-June-2022, West Bengal, India, Soumen Dey (rimbik@gmail.com)
+	==========================================================================
+
+
+
+
+	
+
+
+
+

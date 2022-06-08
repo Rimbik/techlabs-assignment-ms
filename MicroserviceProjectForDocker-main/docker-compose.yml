@@ -11,7 +11,7 @@ services:
     image: ${DOCKER_REGISTRY-}img-blogcommentapi:v1.0
     build:
       context: .
-      dockerfile: blogpost-api/Dockerfile
+      dockerfile: blogcomment-api/Dockerfile
   
   queryms-api:
     image: ${DOCKER_REGISTRY-}img-querymsapi:v1.0

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queryms-api-deployment
+  labels:
+    app: queryms-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: queryms-api
+  template:
+    metadata:
+      labels:
+        app: queryms-api
+    spec:
+      containers:
+      - name: cont-queryms-api
+        image: rimbik/techlabs-pub:v1.0.qs
+        ports:
+        - containerPort: 4003
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queryms-api-service
+spec:
+  type: NodePort
+  selector:
+    app: queryms-api
+  ports:
+    - protocol: TCP
+      port: 5003
+      targetPort: 5003      
+      nodePort: 30003  

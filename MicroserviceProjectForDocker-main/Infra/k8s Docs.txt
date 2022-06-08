@@ -1,3 +1,9 @@
+Lets run minikube to run k8s locally:
+choco install minikube
+minikube start
+
+Then
+-------------
 https://hub.docker.com/repository/
 Username: Rimbik
 

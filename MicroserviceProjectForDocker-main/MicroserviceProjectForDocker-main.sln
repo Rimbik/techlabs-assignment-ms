@@ -16,18 +16,48 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AB46DF0-B2A1-4D5D-9984-264C8FDB9050}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.txt = Readme.txt
+		Start.Docker.tx = Start.Docker.tx
+		Start.Local.txt = Start.Local.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "queryms-api", "queryms-api\queryms-api.csproj", "{BDFA8C80-DF7E-49E3-8B41-D8674E40FDE0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{97BCA68B-4918-466B-BA89-52190CB22EB5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{0C8355E1-A61B-459E-BDC8-94863AB1EC28}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8", "k8", "{FC9749B7-1402-476C-9660-120D27D06551}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{F4E2454B-CB45-4F87-8106-1A22AACAE0BB}"
 	ProjectSection(SolutionItems) = preProject
-		Infra\eventbus-api.config.yml = Infra\eventbus-api.config.yml
-		Infra\eventbus-api.secret.yml = Infra\eventbus-api.secret.yml
-		Infra\eventbus-api.yml = Infra\eventbus-api.yml
+		Infra\k8s\k8CheatSheet.txt = Infra\k8s\k8CheatSheet.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bc", "bc", "{F7F2B79C-2460-499C-AB69-23E7CB8489B0}"
+	ProjectSection(SolutionItems) = preProject
+		Infra\k8s\bc\blogcomment-api.config.yml = Infra\k8s\bc\blogcomment-api.config.yml
+		Infra\k8s\bc\blogcomment-api.secret.yml = Infra\k8s\bc\blogcomment-api.secret.yml
+		Infra\k8s\bc\blogcomment-api.yml = Infra\k8s\bc\blogcomment-api.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bp", "bp", "{3123290A-B46C-4BE3-9992-2664C22FE202}"
+	ProjectSection(SolutionItems) = preProject
+		Infra\k8s\bp\bloagpost-api.config.yml = Infra\k8s\bp\bloagpost-api.config.yml
+		Infra\k8s\bp\bloagpost.secret.yml = Infra\k8s\bp\bloagpost.secret.yml
+		Infra\k8s\bp\bloagpost.yml = Infra\k8s\bp\bloagpost.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eb", "eb", "{F00DD4FE-021E-48E2-9C2C-2433FA0CEA4F}"
+	ProjectSection(SolutionItems) = preProject
+		Infra\k8s\eb\eventbus-api.config.yml = Infra\k8s\eb\eventbus-api.config.yml
+		Infra\k8s\eb\eventbus-api.secret.yml = Infra\k8s\eb\eventbus-api.secret.yml
+		Infra\k8s\eb\eventbus-api.yml = Infra\k8s\eb\eventbus-api.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "qs", "qs", "{BF2F2990-48D9-4E4E-9275-AAE80913BA9D}"
+	ProjectSection(SolutionItems) = preProject
+		Infra\k8s\qs\queryms-api.config.yml = Infra\k8s\qs\queryms-api.config.yml
+		Infra\k8s\qs\queryms-api.secret.yml = Infra\k8s\qs\queryms-api.secret.yml
+		Infra\k8s\qs\queryms-api.yml = Infra\k8s\qs\queryms-api.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{571CE0E2-C811-4A68-9150-ACC9ECC153CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,7 +94,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FC9749B7-1402-476C-9660-120D27D06551} = {97BCA68B-4918-466B-BA89-52190CB22EB5}
+		{F4E2454B-CB45-4F87-8106-1A22AACAE0BB} = {0C8355E1-A61B-459E-BDC8-94863AB1EC28}
+		{F7F2B79C-2460-499C-AB69-23E7CB8489B0} = {F4E2454B-CB45-4F87-8106-1A22AACAE0BB}
+		{3123290A-B46C-4BE3-9992-2664C22FE202} = {F4E2454B-CB45-4F87-8106-1A22AACAE0BB}
+		{F00DD4FE-021E-48E2-9C2C-2433FA0CEA4F} = {F4E2454B-CB45-4F87-8106-1A22AACAE0BB}
+		{BF2F2990-48D9-4E4E-9275-AAE80913BA9D} = {F4E2454B-CB45-4F87-8106-1A22AACAE0BB}
+		{571CE0E2-C811-4A68-9150-ACC9ECC153CA} = {0C8355E1-A61B-459E-BDC8-94863AB1EC28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6265BE28-973F-401A-83D9-CC1DED70236E}
