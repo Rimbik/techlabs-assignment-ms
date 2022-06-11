@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: blogcomment-api.config
 data:
-  blogpost-api-url: blogcomment-api-service
+  blogcomment-api-url: blogcomment-api-service
