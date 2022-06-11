@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: queryms-api.config
 data:
-  eventbus-api-url: queryms-api-service
+  queryms-api-url: queryms-api-service
