@@ -1,6 +1,8 @@
 ﻿using api.Model;
+using blogcomment_api.ConfigHelper;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Configuration;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,26 +12,21 @@ namespace blogcomment_api.Controllers
     [ApiController]
     public class BlogCommentController : ControllerBase
     {
-        //// GET: api/<ValuesController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        private readonly IConfiguration Configuration;
+        public BlogCommentController(IConfiguration configRoot)
+        {
+            Configuration = configRoot;
+        }
 
-        //// GET api/<ValuesController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
 
         // POST api/<ValuesController>
         [HttpPost]
         public bool Post([FromBody] Blog comment)
         {
+            var downStreamAppUrl= Configuration["WebAPIEnv:eventbus_apiUrl"];
+
             //save post to some repo
-            string evbAPIUrl = "http://localhost:3005/api/PublishEvent";
+            string evbAPIUrl = downStreamAppUrl;
             string reqObj = JsonConvert.SerializeObject(comment);
             BlogAPIClient.BlogAPICient.PostApi(evbAPIUrl, reqObj);
 

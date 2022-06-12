@@ -10,14 +10,21 @@ namespace queryms_api.Controllers
     [ApiController]
     public class QueryServiceController : ControllerBase
     {
+        private readonly IConfiguration Configuration;
+        public QueryServiceController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         // GET: api/<QueryServiceController>
         [HttpGet]
         public List<Blog> Get()
         {
-            string evntAPIUrl = "http://localhost:3005/api/PublishEvent";
-            var responseStr = BlogAPIClient.BlogAPICient.GetApi(evntAPIUrl);
+            var downStreamAppUrl = Configuration["WebAPIEnv:eventbus_apiUrl"];
+            var responseStr = BlogAPIClient.BlogAPICient.GetApi(downStreamAppUrl);
 
             var reponse = JsonConvert.DeserializeObject<List<Blog>>(responseStr);
+            
             return reponse;
         }
 

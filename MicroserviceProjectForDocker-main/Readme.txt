@@ -2,8 +2,6 @@
 docker instructions:
 ===================================
 
-github url: https://github.com/Rimbik/techlabs-assignment-ms
-
 >> Check what process are running:
 docker ps
 docker ps --all
@@ -39,8 +37,8 @@ docker ps
 example:
 E:\MicroserLAB\LabDay2\dotnetConverted\MicroserviceProjectForDocker-main>docker ps
 CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                  NAMES
-ee65c02a74af   img-blogpostapi   "dotnet blogpost-apiâ€¦"   35 seconds ago   Up 32 seconds   0.0.0.0:4001->80/tcp   microserviceprojectfordocker-main_blogpost-api_1
-99de0a9f5350   img-eventbusapi   "dotnet eventbus-apiâ€¦"   35 seconds ago   Up 33 seconds   0.0.0.0:4005->80/tcp   microserviceprojectfordocker-main_eventbus-api_1
+ee65c02a74af   img-blogpostapi   "dotnet blogpost-api…"   35 seconds ago   Up 32 seconds   0.0.0.0:4001->80/tcp   microserviceprojectfordocker-main_blogpost-api_1
+99de0a9f5350   img-eventbusapi   "dotnet eventbus-api…"   35 seconds ago   Up 33 seconds   0.0.0.0:4005->80/tcp   microserviceprojectfordocker-main_eventbus-api_1
 
 this indicates both containers are up with port 4001 and 4005 to browse as: 
 http://localhost:4001/swagger/index.html
